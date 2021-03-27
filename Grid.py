@@ -1,7 +1,7 @@
 import Square as Square
 
 
-class Grid:
+class Grid(object):
     squares = None
     min_x = None
     max_x = None
@@ -10,8 +10,8 @@ class Grid:
     host = None
 
     def __init__(self):
-        super()
-        self.name = 'BOARD'
+        super.__init__()
+        self.name = 'GRID'
 
     def __init__(self, min_x, max_x, min_y, max_y):
         super()
@@ -91,6 +91,6 @@ class Grid:
     def set_host(self, host):
         self.host = host
 
-    def put(self, squares):
+    #def put(self, squares):
 
 

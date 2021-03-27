@@ -1,6 +1,3 @@
-import Pieces.Piece as Piece
-
-
 class Square:
     name = 'SQUARE'
     grid = None

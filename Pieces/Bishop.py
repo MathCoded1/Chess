@@ -1,47 +1,25 @@
-import Pieces.Piece as Piece
+from Piece import Piece
+from Move import Move
 
 
-class Square:
-    name = 'SQUARE'
-    grid = None
-    x = None
-    y = None
-    color = None
-    occupant = None
+class Bishop(Piece):
+    def __init__(self, player):
+        super.__init__()
+        self.name = 'BISHOP'
+        self.player = player
+        self.board = self.player.get_board()
+        self.color = self.player.get_color()
+        self.alive = 'TRUE'
+        self.number_of_moves = 0
 
-    def __init__(self):
-        super()
+    def possible_moves(self):
+        moves_list = list(Move)
+        moves_list.append(self.get_board().forward_left_all(self.get_square()))
+        moves_list.append(self.get_board().forward_right_all(self.get_square()))
+        moves_list.append(self.get_board().back_left_all(self.get_square()))
+        moves_list.append(self.get_board().back_right_all(self.get_square()))
+        return moves_list
 
-    def __init__(self, grid, x, y, color, occupant):
-        super()
-        self.grid = grid
-        self.x = x
-        self.y = y
-        self.color = color
-        self.occupant = occupant
-
-    def get_x(self):
-        return self.x
-
-    def set_x(self, x):
-        self.x = x
-
-    def get_y(self):
-        return self.y
-
-    def set_y(self, y):
-        self.y = y
-
-    def get_color(self):
-        return self.color
-
-    def set_color(self, color):
-        self.color = color
-
-    def get_occupant(self):
-        return self.occupant
-
-    def set_occupant(self, occupant):
-        self.occupant = occupant
-        self.get_occupant().set_square(self)
-
+    def valid_moves(self):
+        moves_list1 = self.possible_moves()
+        moves_list2 = list(Move)

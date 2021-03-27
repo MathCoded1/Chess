@@ -1,0 +1,5 @@
+#python cache files
+**/*.pyc
+#pycharm files
+**/.idea/workspace.xml
+**/.idea/tasks.xml

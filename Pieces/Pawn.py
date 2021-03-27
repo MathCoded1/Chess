@@ -1,6 +1,6 @@
-import Pieces.Piece as Piece
-import Square as Square
-import Move.move as Move
+from Piece import Piece
+from Move import Move
+
 
 class Pawn(Piece):
 
@@ -19,7 +19,7 @@ class Pawn(Piece):
         self.number_of_moves = 0
 
     def possible_moves(self):
-        moves = list(Move)
+        moves = []
         if len(self.get_moves()) is not 0:
             if self.is_color_1():
                 moves.append(self.get_board().forward(self.get_board().forward(self.get_square())))
@@ -42,10 +42,9 @@ class Pawn(Piece):
                     moves.append(square)
         return moves
 
-   
     def valid_moves(self):
         possible_moves = self.possibile_moves()
-        moves= list(Move)
+        moves = []
 
 
 

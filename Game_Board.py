@@ -1,13 +1,14 @@
-import Grid.Grid as Grid
-import Square.Square as Square
+from Grid import Grid
+from Square import Square
+
 
 class GameBoard:
-    grid = Grid.Grid(1, 8, 1, 8)
+    grid = Grid(1, 8, 1, 8)
     color_1 = None
     color_2 = None
 
     def __init__(self, color_1,  color_2):
-        super()
+        super.__init__()
         self.grid.set_host(self)
         self.init_grid_colors(color_1,  color_2)
 
@@ -42,48 +43,64 @@ class GameBoard:
         y = square.get_y()
         if y is not 8:
             return self.get_grid().square_up(x, y)
+        else:
+            return None
 
     def back(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if y is not 1:
             return self.get_grid().square_down(x, y)
+        else:
+            return None
 
     def left(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if x is not 1:
             return self.get_grid().square_left(x, y)
+        else:
+            return None
 
     def right(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if x is not 8:
             return self.get_grid().square_right(x, y)
+        else:
+            return None
 
     def forward_right(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if y is not 8 and x is not 8:
             return self.get_grid().square_up_right(x, y)
+        else:
+            return None
 
     def forward_left(self,  square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if y is not 8 and x is not 1:
             return self.get_grid().square_up_left(x, y)
+        else:
+            return None
 
     def back_right(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if y is not 1 and x is not 8:
             return self.get_grid().square_down_right(x, y)
+        else:
+            return None
 
     def back_left(self, square):
         x = self.switch_x(square.get_x())
         y = square.get_y()
         if y is not 1 and x is not 1:
             return self.get_grid().square_down_left(x, y)
+        else:
+            return None
 
     def get_color_1(self):
         return self.color_1

@@ -1,4 +1,4 @@
-import Move.move as Move
+from Move import Move
 
 
 class Piece(object):
