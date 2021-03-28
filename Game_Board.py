@@ -133,38 +133,48 @@ class GameBoard:
 
     def forward_left_all(self, square):
         squares = []
-        if self.forward_left() is not None:
+        while self.forward_left(square) is not None:
             squares.append(self.forward_left(square))
-        if self.forward_left(square) is not None:
-            squares.append(self.forward_left_all(square))
         return squares
 
     def forward_right_all(self, square):
         squares = []
-        if self.forward_right() is not None:
+        while self.forward_right(square) is not None:
             squares.append(self.forward_right(square))
-            if self.forward_right(square) is not None:
-                squares.append(self.forward_right_all(square))
         return squares
 
     def back_left_all(self, square):
         squares = []
-        if self.back_left() is not None:
+        while self.back_left(square) is not None:
             squares.append(self.back_left(square))
-            if self.back_left(square) is not None:
-                squares.append(self.back_left_all(square))
         return squares
 
     def back_right_all(self, square):
         squares = []
-        if self.back_right() is not None:
-            temp_square = self.back_right(square)
+        while self.back_right(square) is not None:
             squares.append(self.back_right(square))
-            if self.back_right(temp_square) is not None:
-                squares.append(self.back_right_all(temp_square))
         return squares
 
     def forward_all(self, square):
         squares = []
-        if self.forward(square) is not None:
+        while self.forward(square) is not None:
             squares.append(self.forward(square))
+        return squares
+
+    def back_all(self, square):
+        squares = []
+        while self.back(square) is not None:
+            squares.append(self.back(square))
+        return squares
+
+    def right_all(self, square):
+        squares = []
+        while self.right(square) is not None:
+            squares.append(self.right(square))
+        return squares
+
+    def left_all(self, square):
+        squares = []
+        while self.left(square) is not None:
+            squares.append(self.left(square))
+            return squares

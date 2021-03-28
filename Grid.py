@@ -30,7 +30,7 @@ class Grid(object):
 
     def get_x_y(self, x_to_find, y_to_find):
         for square in self.squares:
-            if square.get_y() is y_to_find and square.get_x() is x_to_find:
+            if square.get_y() == y_to_find and square.get_x() == x_to_find:
                 return square
 
     def square_up(self, x, y):

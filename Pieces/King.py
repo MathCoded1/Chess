@@ -3,14 +3,9 @@ from Move import Move
 
 
 class King(Piece.Piece):
-    def __init__(self, player):
-        super.__init__()
-        self.name = 'PAWN'
-        self.player = player
-        self.board = self.player.get_board()
-        self.color = self.player.get_color()
-        self.alive = 'TRUE'
-        self.number_of_moves = 0
+    def __init__(self, player, starting_square):
+        super().__init__(player, starting_square)
+        self.name = 'KING'
 
     def possible_moves(self):
         moves_list = [Move(self.get_board().forward(self.get_square())), Move(self.get_board().back(self.get_square())),

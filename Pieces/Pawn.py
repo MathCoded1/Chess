@@ -4,19 +4,9 @@ from Move import Move
 
 class Pawn(Piece.Piece):
 
-    possible_moves = None
-    possible_attacks = None
-
-    number_of_moves = None
-
-    def __init__(self, player):
-        super.__init__()
+    def __init__(self, player, starting_square):
+        super().__init__(player, starting_square)
         self.name = 'PAWN'
-        self.player = player
-        self.board = self.player.get_board()
-        self.color = self.player.get_color()
-        self.alive = 'TRUE'
-        self.number_of_moves = 0
 
     def possible_moves(self):
         moves = []

@@ -1,10 +1,10 @@
 from Game_Board import GameBoard
 from Pieces.Pawn import Pawn
-import Pieces.Rook as Rook
-import Pieces.Knight as Knight
-import Pieces.Bishop as Bishop
-import Pieces.Queen as Queen
-import Pieces.King as King
+from Pieces.Rook import Rook
+from Pieces.Knight import Knight
+from Pieces.Bishop import Bishop
+from Pieces.Queen import Queen
+from Pieces.King import King
 
 
 class Chess:
@@ -20,7 +20,7 @@ class Chess:
         self.player_1 = player_1
         self.player_2 = player_2
         self.board = GameBoard(self.rules.color_1,  self.rules.color_2)
-        self.moves = list()
+        self.moves = []
 
     def get_board(self):
         return self.board
@@ -38,35 +38,35 @@ class Chess:
         self.get_board().place(piece, self.get_board().get_square(x, y))
 
     def set_up_game(self):
-        self.place(Pawn(self.get_player_1()), 'A', 2)
-        self.place(Pawn(self.get_player_1()), 'B', 2)
-        self.place(Pawn(self.get_player_1()), 'C', 2)
-        self.place(Pawn(self.get_player_1()), 'D', 2)
-        self.place(Pawn(self.get_player_1()), 'E', 2)
-        self.place(Pawn(self.get_player_1()), 'F', 2)
-        self.place(Pawn(self.get_player_1()), 'G', 2)
-        self.place(Pawn(self.get_player_1()), 'H', 2)
-        self.place(Pawn(self.get_player_2()), 'A', 7)
-        self.place(Pawn(self.get_player_2()), 'B', 7)
-        self.place(Pawn(self.get_player_2()), 'C', 7)
-        self.place(Pawn(self.get_player_2()), 'D', 7)
-        self.place(Pawn(self.get_player_2()), 'E', 7)
-        self.place(Pawn(self.get_player_2()), 'F', 7)
-        self.place(Pawn(self.get_player_2()), 'G', 7)
-        self.place(Pawn(self.get_player_2()), 'H', 7)
-        self.place(Rook(self.get_player_1()), 'A', 1)
-        self.place(Rook(self.get_player_1()), 'H', 1)
-        self.place(Rook(self.get_player_2()), 'A', 8)
-        self.place(Rook(self.get_player_2()), 'H', 8)
-        self.place(Knight(self.get_player_1()), 'B', 1)
-        self.place(Knight(self.get_player_1()), 'G', 1)
-        self.place(Knight(self.get_player_2()), 'B', 8)
-        self.place(Knight(self.get_player_2()), 'G', 8)
-        self.place(Bishop(self.get_player_1()), 'C', 1)
-        self.place(Bishop(self.get_player_1()), 'F', 1)
-        self.place(Bishop(self.get_player_2()), 'C', 8)
-        self.place(Bishop(self.get_player_2()), 'F', 8)
-        self.place(Queen(self.get_player_1()), 'D', 1)
-        self.place(Queen(self.get_player_2()), 'D', 8)
-        self.place(King(self.get_player_1()), 'E', 1)
-        self.place(King(self.get_player_2()), 'E', 8)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('A', 2)), 'A', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('B', 2)), 'B', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('C', 2)), 'C', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('D', 2)), 'D', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('E', 2)), 'E', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('F', 2)), 'F', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('G', 2)), 'G', 2)
+        self.place(Pawn(self.get_player_1(), self.get_board().get_square('H', 2)), 'H', 2)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('A', 7)), 'A', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('B', 7)), 'B', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('C', 7)), 'C', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('D', 7)), 'D', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('E', 7)), 'E', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('F', 7)), 'F', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('G', 7)), 'G', 7)
+        self.place(Pawn(self.get_player_2(), self.get_board().get_square('H', 7)), 'H', 7)
+        self.place(Rook(self.get_player_1(), self.get_board().get_square('A', 1)), 'A', 1)
+        self.place(Rook(self.get_player_1(), self.get_board().get_square('H', 1)), 'H', 1)
+        self.place(Rook(self.get_player_2(), self.get_board().get_square('A', 8)), 'A', 8)
+        self.place(Rook(self.get_player_2(), self.get_board().get_square('H', 8)), 'H', 8)
+        self.place(Knight(self.get_player_1(), self.get_board().get_square('B', 1)), 'B', 1)
+        self.place(Knight(self.get_player_1(), self.get_board().get_square('G', 1)), 'G', 1)
+        self.place(Knight(self.get_player_2(), self.get_board().get_square('B', 8)), 'B', 8)
+        self.place(Knight(self.get_player_2(), self.get_board().get_square('G', 8)), 'G', 8)
+        self.place(Bishop(self.get_player_1(), self.get_board().get_square('C', 1)), 'C', 1)
+        self.place(Bishop(self.get_player_1(), self.get_board().get_square('F', 1)), 'F', 1)
+        self.place(Bishop(self.get_player_2(), self.get_board().get_square('C', 8)), 'C', 8)
+        self.place(Bishop(self.get_player_2(), self.get_board().get_square('F', 8)), 'F', 8)
+        self.place(Queen(self.get_player_1(), self.get_board().get_square('D', 1)), 'D', 1)
+        self.place(Queen(self.get_player_2(), self.get_board().get_square('D', 8)), 'D', 8)
+        self.place(King(self.get_player_1(), self.get_board().get_square('E', 1)), 'E', 1)
+        self.place(King(self.get_player_2(), self.get_board().get_square('E', 8)), 'E', 8)

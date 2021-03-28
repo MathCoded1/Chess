@@ -6,11 +6,7 @@ class Square(object):
     color = None
     occupant = None
 
-    def __init__(self):
-        super()
-
     def __init__(self, grid, x, y, color, occupant):
-        super()
         self.grid = grid
         self.x = x
         self.y = y
