@@ -6,12 +6,11 @@ class Square(object):
     color = None
     occupant = None
 
-    def __init__(self, grid, x, y, color, occupant):
+    def __init__(self, grid, x, y, color):
         self.grid = grid
         self.x = x
         self.y = y
         self.color = color
-        self.occupant = occupant
 
     def get_x(self):
         return self.x

@@ -15,7 +15,6 @@ class Chess:
     moves = None
 
     def __init__(self, rules, player_1, player_2):
-        super()
         self.rules = rules
         self.player_1 = player_1
         self.player_2 = player_2

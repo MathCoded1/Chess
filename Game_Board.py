@@ -8,7 +8,6 @@ class GameBoard:
     color_2 = None
 
     def __init__(self, color_1, color_2):
-        super.__init__()
         self.grid.set_host(self)
         self.init_grid_colors(color_1, color_2)
 
