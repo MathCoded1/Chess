@@ -19,7 +19,7 @@ class Grid(object):
         self.max_x = max_x
         self.min_y = min_y
         self.max_y = max_y
-        self.squares = Square()[self.max_x-self.min_x+1][self.max_y-self.min_y+1]
+        #self.squares = Square([self.max_x-self.min_x][self.max_y-self.min_y])
 
     def get_square_by_square(self, square_to_find):
         for square in self.squares:

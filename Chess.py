@@ -1,10 +1,10 @@
 from Game_Board import GameBoard
 from Pieces.Pawn import Pawn
-from Pieces.Rook import Rook
-from Pieces.Knight import Knight
-from Pieces.Bishop import Bishop
-from Pieces.Queen import Queen
-from Pieces.King import King
+import Pieces.Rook as Rook
+import Pieces.Knight as Knight
+import Pieces.Bishop as Bishop
+import Pieces.Queen as Queen
+import Pieces.King as King
 
 
 class Chess:
@@ -15,11 +15,11 @@ class Chess:
     moves = None
 
     def __init__(self, rules, player_1, player_2):
-        super.__init__()
+        super()
         self.rules = rules
         self.player_1 = player_1
         self.player_2 = player_2
-        self.board = GameBoard.GameBoard(self.rules.color_1,  self.rules.color_2)
+        self.board = GameBoard(self.rules.color_1,  self.rules.color_2)
         self.moves = list()
 
     def get_board(self):

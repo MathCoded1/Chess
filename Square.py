@@ -1,4 +1,4 @@
-class Square:
+class Square(object):
     name = 'SQUARE'
     grid = None
     x = None

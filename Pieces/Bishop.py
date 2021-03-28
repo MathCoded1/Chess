@@ -1,8 +1,8 @@
-from Piece import Piece
+from . import Piece
 from Move import Move
 
 
-class Bishop(Piece):
+class Bishop(Piece.Piece):
     def __init__(self, player):
         super.__init__()
         self.name = 'BISHOP'

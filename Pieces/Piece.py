@@ -1,7 +1,7 @@
 from Move import Move
 
 
-class Piece(object):
+class Piece:
 
     name = None
     player = None
@@ -13,13 +13,13 @@ class Piece(object):
     moves = None
 
     def __init__(self, player):
-        super()
-        self.name = 'PAWN'
+        super.__init__()
+        self.name = None
         self.player = player
         self.board = self.player.get_board()
         self.color = self.player.get_color()
         self.alive = 'TRUE'
-        self.moves = list(Move)
+        self.moves = []
 
     def set_color(self, color):
         self.color = color

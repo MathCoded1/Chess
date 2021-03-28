@@ -1,8 +1,8 @@
-from Piece import Piece
+from . import Piece
 from Move import Move
 
 
-class Rook(Piece):
+class Rook(Piece.Piece):
     def __init__(self, player):
         super.__init__()
         self.name = 'ROOK'

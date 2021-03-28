@@ -1,4 +1,4 @@
-from Piece import Piece
+from . import Piece
 from Move import Move
 
 

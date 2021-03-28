@@ -1,10 +1,9 @@
-from Piece import Piece
+from . import Piece
 from Move import Move
 
 
-class Queen(Piece):
+class Queen(Piece.Piece):
     def __init__(self, player):
-        super.__init__()
         self.name = 'PAWN'
         self.player = player
         self.board = self.player.get_board()
@@ -14,4 +13,4 @@ class Queen(Piece):
 
 
 def possible_moves(self):
-    moves = list(Move)
+    moves = []

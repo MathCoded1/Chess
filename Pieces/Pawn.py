@@ -1,8 +1,8 @@
-from Piece import Piece
+from . import Piece
 from Move import Move
 
 
-class Pawn(Piece):
+class Pawn(Piece.Piece):
 
     possible_moves = None
     possible_attacks = None
@@ -20,7 +20,7 @@ class Pawn(Piece):
 
     def possible_moves(self):
         moves = []
-        if len(self.get_moves()) is not 0:
+        if len(self.get_moves()) != 0:
             if self.is_color_1():
                 moves.append(self.get_board().forward(self.get_board().forward(self.get_square())))
             else:
